@@ -11,6 +11,17 @@ bp = Blueprint("api_v1", __name__, url_prefix="/api/v1")
 
 @bp.get("/")
 def root():
+    """
+    Lista todas as receitas.
+    ---
+    description: Retorna uma lista de receitas.
+    produces: application/json
+    tags:
+      - receitas
+    responses:
+      200:
+        description: Lista de Usuários
+    """
     return jsonify(Receitas.query.all()), 200
 
 
