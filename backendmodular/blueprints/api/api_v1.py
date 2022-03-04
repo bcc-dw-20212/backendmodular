@@ -27,6 +27,19 @@ def root():
 
 @bp.post("/")
 def insert_receita():
+    """
+    Insere nova receita.
+    ---
+    description: Faz isso e aquilo.
+    produces: application/json
+    tags:
+      - receitas
+    responses:
+      201:
+        description: Receita inserida com sucesso.
+      406:
+        description: Erro de integridade.
+    """
     json = request.get_json()
 
     nova = Receitas()
